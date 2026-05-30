@@ -1,0 +1,26 @@
+def adjacency_list_to_matrix(adj_list):
+
+    num_nodes = len(adj_list)
+
+    # Create a num_nodes x num_nodes matrix filled with 0s
+    matrix = [[0 for _ in range(num_nodes)] for _ in range(num_nodes)]
+
+    # Fill the matrix based on the adjacency list
+    for node, neighbors in adj_list.items():
+        for neighbor in neighbors:
+            matrix[node][neighbor] = 1
+
+    # Print each row
+    for row in matrix:
+        print(row)
+
+    return matrix
+graph = {
+    0: [1, 2],
+    1: [2],
+    2: [0, 3],
+    3: [2]
+}
+
+result = adjacency_list_to_matrix(graph)
+print(result)
